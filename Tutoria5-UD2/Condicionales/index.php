@@ -42,13 +42,6 @@
             print "<p> SWITCH - a no vale 0 ni 1</p>";
     }
     ?>
-
-    <br>
-    <a href="../EjercicioResuelto/index.php">Ejercicio Resuelto Condicionales</a>
-    <br>
-    <a href="../Ejemplo1/index.php">Variables especiales de PHP</a>
-    <br>
-    <a href="../Ejemplo3/index.php">Bucles</a>
 </body>
 
 </html>

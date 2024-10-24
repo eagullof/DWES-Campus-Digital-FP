@@ -24,9 +24,6 @@
     printf("<p>El número PI vale %+.2f</p>", 3.1416); // +3.14
     $txt_pi = sprintf("<p>El número PI vale %+.2f</p>", 3.1416);
     ?>
-    <a href="../Ejemplo2/index.php">Cadenas de texto</a>
-    <br>
-    <a href="../Ejemplo3/index.php">Funciones relacionadas con los tipos de datos</a>
 </body>
 
 </html>

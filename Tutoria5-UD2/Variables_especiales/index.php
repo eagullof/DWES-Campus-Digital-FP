@@ -138,10 +138,6 @@
     mostrarVariableGlobal();
 
     ?>
-    <br>
-    <a href="../Ejemplo2/index.php">Condicionales</a>
-    <br>
-    <a href="../Ejemplo3/index.php">Bucles</a>
 </body>
 
 </html>

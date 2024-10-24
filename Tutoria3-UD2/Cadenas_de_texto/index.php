@@ -26,9 +26,6 @@
     CADENA;
     print $a;
     ?>
-    <a href="../Ejemplo1/index.php">Generación de código HTML</a>
-    <br>
-    <a href="../Ejemplo3/index.php">Funciones relacionadas con los tipos de datos</a>
 </body>
 
 </html>

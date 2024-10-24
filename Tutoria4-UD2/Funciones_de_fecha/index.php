@@ -57,12 +57,6 @@
     var_dump($ultimoLunes); // Muestra el objeto DateTime que representa la fecha del último lunes
     
     ?>
-    <br>
-    <a href="../EjercicioResuelto/index.php">Ejercicio resuelto</a>
-    <br>
-    <a href="../Ejemplo2/index.php">Variables especiales de PHP</a>
-    <br>
-    <a href="../Ejemplo3/index.php">Condicionales</a>
 </body>
 
 </html>

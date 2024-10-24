@@ -28,9 +28,6 @@
     define("PI", 3.1416);
     print "<p>El valor de PI es " . PI . "</p>"; //El identificador se reconoce tanto por PI como por pi
     ?>
-    <a href="../Ejemplo1/index.php">Generación de código HTML</a>
-    <br>
-    <a href="../Ejemplo2/index.php">Cadenas de texto</a>
 </body>
 
 </html>

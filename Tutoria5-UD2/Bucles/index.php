@@ -59,10 +59,5 @@
         echo "Número: $i<br>";
     }
     ?>
-
-    <br>
-    <a href="../Ejemplo1/index.php">Variables especiales de PHP</a>
-    <br>
-    <a href="../Ejemplo2/index.php">Condicionales</a>
 </body>
 </html>

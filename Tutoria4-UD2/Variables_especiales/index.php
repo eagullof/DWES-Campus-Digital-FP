@@ -50,10 +50,6 @@
     }
 
     ?>
-    <br>
-    <a href="../Ejemplo1/index.php">Cadenas de texto</a>
-    <br>
-    <a href="../Ejemplo3/index.php">Condicionales</a>
 </body>
 
 </html>
