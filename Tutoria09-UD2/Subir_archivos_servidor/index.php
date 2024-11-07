@@ -55,7 +55,7 @@ if (isset($_POST["enviar"])) {
         echo "<p>Han habido errores, estos han sido:</p>";
         comprobarError($_FILES["documento"]["error"]);
     }
-}else{
+}else{ //https://github.com/eagullof/DWES-Campus-Digital-FP
 ?>
 <h3 class="text-center">Subida de un fichero</h3>
 <fieldset style="width:40%; margin:auto;">

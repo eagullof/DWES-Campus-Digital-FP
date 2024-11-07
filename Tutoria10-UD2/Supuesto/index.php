@@ -15,6 +15,12 @@ $tareas = obtenerTareas(); // Obtenemos las tareas almacenadas en la sesión
 </head>
 
 <body class="m-2">
+    <div class="border border-secondary p-2 bg-info-subtle">
+        <h1 class="text-primary-emphasis">Enunciado</h1>
+        <p><strong>
+            Imagina que trabajas en una pequeña empresa que necesita gestionar las tareas asignadas a cada empleado de manera organizada. Tu objetivo es construir una aplicación web que permita añadir, visualizar, modificar y eliminar tareas mediante formularios web y PHP. Este ejercicio integrará las principales características de PHP que has aprendido.
+        </strong></p>
+    </div>
     <h1>Lista de Tareas</h1>
     <a class="btn btn-primary" href="add_task.php">Agregar Nueva Tarea</a>
     <a class="btn btn-danger" href="close.php">Cerrar sesión</a>
@@ -32,7 +38,7 @@ $tareas = obtenerTareas(); // Obtenemos las tareas almacenadas en la sesión
             </thead>
             <tbody>
                 <!-- Bucle que recorre cada tarea en el array $tareas para mostrarlas en la tabla -->
-                <?php foreach ($tareas as $tarea){ ?>
+                <?php foreach ($tareas as $tarea) { ?>
                     <tr>
                         <td><?php echo $tarea['id']; ?></td>
                         <td><?php echo $tarea['nombre']; ?></td>
