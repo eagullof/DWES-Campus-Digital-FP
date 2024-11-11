@@ -2,7 +2,6 @@
 include 'functions.php'; // Incluimos el fichero php de funciones
 
 $tareas = obtenerTareas(); // Obtenemos las tareas almacenadas en la sesión
-
 ?>
 
 <!DOCTYPE html>

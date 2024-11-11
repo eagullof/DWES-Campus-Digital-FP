@@ -19,13 +19,7 @@ function agregarTarea($nombre, $descripcion, $prioridad, $fecha)
     $id = count($_SESSION["tareas"] ?? []) > 0
         ? max(array_column($_SESSION["tareas"], 'id')) + 1
         : 1;
-    $_SESSION["tareas"][] = [
-        'id' => $id,
-        'nombre' => $nombre,
-        'descripcion' => $descripcion,
-        'prioridad' => $prioridad,
-        'fecha' => $fecha
-    ];
+    $_SESSION["tareas"][] = ['id' => $id, 'nombre' => $nombre, 'descripcion' => $descripcion, 'prioridad' => $prioridad, 'fecha' => $fecha];
 }
 
 // Función para obtener todas las tareas
