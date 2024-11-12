@@ -10,19 +10,19 @@
 
 <body class="m-2">
     <h1 class="text-primary display-5">Bienvenidos al servidor :&#41;</h1>
-    <div class="border border-secondary p-2 bg-primary-subtle ">
-        <h1 class="text-primary-emphasis d-flex justify-content-center">Enlaces a los ejemplos de las tutorías.</h1>
-        <div class="d-flex justify-content-center">
-            <a class="btn btn-primary m-2" href="DWES-Campus-Digital-FP/EMMET/">EMMET</a>
-            <a class="btn btn-primary m-2" href="DWES-Campus-Digital-FP/Tutoria02-UD1/">Tutoría 2</a>
-            <a class="btn btn-primary m-2" href="DWES-Campus-Digital-FP/Tutoria03-UD2/">Tutoría 3</a>
-            <a class="btn btn-primary m-2" href="DWES-Campus-Digital-FP/Tutoria04-UD2/">Tutoría 4</a>
-            <a class="btn btn-primary m-2" href="DWES-Campus-Digital-FP/Tutoria05-UD2/">Tutoría 5</a>
-            <a class="btn btn-primary m-2" href="DWES-Campus-Digital-FP/Tutoria06-UD2/">Tutoría 6</a>
-            <a class="btn btn-primary m-2" href="DWES-Campus-Digital-FP/Tutoria07-UD2/">Tutoría 7</a>
-            <a class="btn btn-primary m-2" href="DWES-Campus-Digital-FP/Tutoria08-UD2/">Tutoría 8</a>
-            <a class="btn btn-primary m-2" href="DWES-Campus-Digital-FP/Tutoria09-UD2/">Tutoría 9</a>
-            <a class="btn btn-primary m-2" href="DWES-Campus-Digital-FP/Tutoria10-UD2/">Tutoría 10</a>
+    <div class="border border-secondary p-2 bg-primary-subtle">
+        <h1 class="text-primary-emphasis text-center">Enlaces a los ejemplos de las tutorías.</h1>
+        <div class="d-flex flex-wrap justify-content-center">
+            <a class="btn btn-outline-primary m-2" href="DWES-Campus-Digital-FP/EMMET/">EMMET</a>
+            <a class="btn btn-outline-primary m-2" href="DWES-Campus-Digital-FP/Tutoria02-UD1/">Tutoría 2</a>
+            <a class="btn btn-outline-primary m-2" href="DWES-Campus-Digital-FP/Tutoria03-UD2/">Tutoría 3</a>
+            <a class="btn btn-outline-primary m-2" href="DWES-Campus-Digital-FP/Tutoria04-UD2/">Tutoría 4</a>
+            <a class="btn btn-outline-primary m-2" href="DWES-Campus-Digital-FP/Tutoria05-UD2/">Tutoría 5</a>
+            <a class="btn btn-outline-primary m-2" href="DWES-Campus-Digital-FP/Tutoria06-UD2/">Tutoría 6</a>
+            <a class="btn btn-outline-primary m-2" href="DWES-Campus-Digital-FP/Tutoria07-UD2/">Tutoría 7</a>
+            <a class="btn btn-outline-primary m-2" href="DWES-Campus-Digital-FP/Tutoria08-UD2/">Tutoría 8</a>
+            <a class="btn btn-outline-primary m-2" href="DWES-Campus-Digital-FP/Tutoria09-UD2/">Tutoría 9</a>
+            <a class="btn btn-outline-primary m-2" href="DWES-Campus-Digital-FP/Tutoria10-UD2/">Tutoría 10</a>
         </div>
     </div>
     <div class="border border-secondary p-3 bg-primary-subtle mt-2">
