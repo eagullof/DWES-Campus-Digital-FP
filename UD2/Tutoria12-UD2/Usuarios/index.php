@@ -1,5 +1,5 @@
 <?php
-require 'funciones_usuario.php';
+include 'funciones_usuario.php';
 ?>
 
 <!DOCTYPE html>
@@ -12,14 +12,14 @@ require 'funciones_usuario.php';
 <body>
     <div class="container mt-5">
         <h1>Bienvenido al Sistema</h1>
-        <?php if (esUsuarioAutenticado()) : ?>
+        <?php if (esUsuarioAutenticado()) { ?>
             <p>Has iniciado sesión como <?= htmlspecialchars($_SESSION['usuario']['nombre']); ?>.</p>
             <a href="perfil.php" class="btn btn-primary">Ir a Perfil</a>
             <a href="logout.php" class="btn btn-danger">Cerrar Sesión</a>
-        <?php else : ?>
+        <?php } else { ?>
             <a href="login.php" class="btn btn-primary">Iniciar Sesión</a>
             <a href="registro.php" class="btn btn-secondary">Registrarse</a>
-        <?php endif; ?>
+        <?php } ?>
     </div>
 </body>
 </html>

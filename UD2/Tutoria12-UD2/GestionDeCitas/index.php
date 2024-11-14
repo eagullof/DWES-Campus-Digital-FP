@@ -18,7 +18,7 @@ $citas = obtenerCitas();
         <h1 class="mb-4">Reservas de Citas</h1>
         <a href="reservar.php" class="btn btn-primary mb-3">Reservar una Nueva Cita</a>
 
-        <?php if (!empty($citas)) : ?>
+        <?php if (!empty($citas)) { ?>
             <table class="table table-bordered">
                 <thead class="thead-dark">
                     <tr>
@@ -30,7 +30,7 @@ $citas = obtenerCitas();
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($citas as $cita) : ?>
+                    <?php foreach ($citas as $cita) { ?>
                         <tr>
                             <td><?php echo htmlspecialchars($cita['nombre']); ?></td>
                             <td><?php echo htmlspecialchars($cita['fecha']); ?></td>
@@ -41,12 +41,12 @@ $citas = obtenerCitas();
                                 <a href="cancelar.php?id=<?php echo $cita['id']; ?>" class="btn btn-sm btn-danger">Cancelar</a>
                             </td>
                         </tr>
-                    <?php endforeach; ?>
+                    <?php } ?>
                 </tbody>
             </table>
-        <?php else : ?>
+        <?php } else { ?>
             <p>No hay citas reservadas.</p>
-        <?php endif; ?>
+        <?php } ?>
     </div>
 </body>
 </html>

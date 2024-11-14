@@ -1,5 +1,5 @@
 <?php
-require 'funciones_usuario.php';
+include 'funciones_usuario.php';
 
 cerrarSesion();
 

@@ -1,5 +1,5 @@
 <?php
-require 'funciones_usuario.php';
+include 'funciones_usuario.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario = $_POST['usuario'];
@@ -24,9 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="container mt-5">
         <h1>Iniciar Sesión</h1>
-        <?php if (isset($error)) : ?>
+        <?php if (isset($error)) { ?>
             <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>
-        <?php endif; ?>
+        <?php } ?>
         <form method="POST" action="login.php">
             <div class="form-group">
                 <label>Usuario</label>

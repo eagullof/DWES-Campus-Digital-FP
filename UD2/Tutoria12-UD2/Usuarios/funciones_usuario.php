@@ -1,5 +1,11 @@
 <?php
-session_start();
+
+//Comprobamos que la sesión no esté iniciada y si es así, la iniciamos
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+//session_start();
 
 function cargarUsuarios() {
     $_SESSION["usuarios"]["admin"] = ['password' => '1234', 'nombre' => 'Administrador'];
@@ -9,7 +15,7 @@ function autenticarUsuario($usuario, $password) {
     cargarUsuarios();
     
     if (isset($_SESSION["usuarios"][$usuario]) && $_SESSION["usuarios"][$usuario]['password'] === $password) {
-        $_SESSION['usuario'] = [
+        $_SESSION['u_logueado'] = [
             'nombre' => $_SESSION["usuarios"][$usuario]['nombre'],
             'username' => $usuario,
         ];
@@ -30,7 +36,7 @@ function registrarUsuario($usuario, $password, $nombre) {
     ];
     
     // Iniciamos la sesión
-    $_SESSION['usuario'] = [
+    $_SESSION['u_logueado'] = [
         'nombre' => $nombre,
         'username' => $usuario,
     ];
@@ -39,10 +45,10 @@ function registrarUsuario($usuario, $password, $nombre) {
 }
 
 function esUsuarioAutenticado() {
-    return isset($_SESSION['usuario']);
+    return isset($_SESSION['u_logueado']);
 }
 
 function cerrarSesion() {
-    unset($_SESSION['usuario']);
+    unset($_SESSION['u_logueado']);
 }
 ?>

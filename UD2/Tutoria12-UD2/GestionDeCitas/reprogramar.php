@@ -22,8 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo $mensaje;
     }
-} else {
-    echo "Token CSRF no válido.";
 }
 
 ?>

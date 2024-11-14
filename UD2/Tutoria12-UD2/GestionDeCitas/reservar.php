@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fecha_cita = htmlspecialchars(trim($_POST['fecha_cita']));
     $hora_cita = htmlspecialchars(trim($_POST['hora_cita']));
     $motivo = htmlspecialchars(trim($_POST['motivo']));
-
+    
     //Generamos el mensaje de error
     $mensaje .= validarDia($fecha_cita) ? "" : "<p class='alert alert-danger mt-2' role='alert'>El día escogido no se encuentra disponible.</p>";
     $mensaje .= validarHora($hora_cita) ? "" : "<p class='alert alert-danger mt-2' role='alert'>La hora escogida no se encuentra disponible.</p>";
@@ -27,8 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo $mensaje;
     }
-} else {
-    echo "Token CSRF no válido.";
 }
 ?>
 

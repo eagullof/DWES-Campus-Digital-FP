@@ -1,7 +1,7 @@
 <?php
 function agregarCita($nombre, $fecha, $hora, $motivo) {
     $_SESSION['citas'][] = [
-        'id' => uniqid("cita_"),
+        'id' => uniqid("cita_"), //Genera un id respecto a la fecha en milisegudnos
         'nombre' => $nombre,
         'fecha' => $fecha,
         'hora' => $hora,
