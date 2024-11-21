@@ -13,10 +13,13 @@
     <div class="border border-secondary p-2 bg-primary-subtle">
         <h1 class="text-primary-emphasis text-center">Enlaces a los ejemplos de las tutorías.</h1>
         <div class="d-flex flex-wrap justify-content-center">
-            <a class="btn btn-outline-primary m-2" href="http://localhost/DWES-Campus-Digital-FP/EMMET">EMMET</a>
-            <a class="btn btn-outline-primary m-2" href="http://localhost/DWES-Campus-Digital-FP/UD1">UD1</a>
-            <a class="btn btn-outline-primary m-2" href="http://localhost/DWES-Campus-Digital-FP/UD2">UD2</a>
-            <a class="btn btn-outline-primary m-2" href="http://localhost/DWES-Campus-Digital-FP/UD3">UD3</a>
+            <a class="btn btn-outline-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria14-UD3/">Tutoría 14</a>
+        </div>
+    </div>
+    <div class="border border-secondary p-3 bg-primary-subtle mt-2">
+        <h1 class="text-primary-emphasis text-center">Todos los ejemplos</h1>
+        <div class="d-flex flex-wrap justify-content-center">
+            <a class="btn btn-outline-primary m-2" href="DWES-Campus-Digital-FP/UD3/Tutoria14-UD3/conexionBD_MySQLi/">conexionBD_MySQLi</a>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
