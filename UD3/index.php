@@ -15,6 +15,7 @@
         <div class="d-flex flex-wrap justify-content-center">
             <a class="btn btn-outline-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria14-UD3/">Tutoría 14</a>
             <a class="btn btn-outline-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria15-UD3/">Tutoría 15</a>
+            <a class="btn btn-outline-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria16-UD3/">Tutoría 16</a>
         </div>
     </div>
     <div class="border border-secondary p-3 bg-primary-subtle mt-2">
@@ -24,6 +25,8 @@
             <a class="btn btn-outline-primary m-2" href="DWES-Campus-Digital-FP/UD3/Tutoria15-UD3/consultas/">Consultas</a>
             <a class="btn btn-outline-primary m-2" href="DWES-Campus-Digital-FP/UD3/Tutoria15-UD3/transacciones/">Transacciones</a>
             <a class="btn btn-outline-primary m-2" href="DWES-Campus-Digital-FP/UD3/Tutoria16-UD3/ejercicioResuelto1/">Ejercicio resuelto 1</a>
+            <a class="btn btn-outline-primary m-2" href="DWES-Campus-Digital-FP/UD3/Tutoria16-UD3/resultados/">Resultados</a>
+            <a class="btn btn-outline-primary m-2" href="DWES-Campus-Digital-FP/UD3/Tutoria16-UD3/ejercicioResuelto2/">Ejercicio resuelto 2</a>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

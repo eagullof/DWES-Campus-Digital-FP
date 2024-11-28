@@ -1,4 +1,7 @@
 <?php
+/**
+ * Según la información que figura en la tabla stocks de la base de datos proyecto, la tienda 1 (CENTRAL) tiene 2 unidades del producto de código 3DSNG y la tienda 3 (SUCURSAL2) ninguno. Suponiendo que los datos son esos (no hace falta que los compruebes en el código), utiliza una transacción para mover una unidad de ese producto de la tienda 1 a la tienda 3.
+ */
 //Hacemos la conexión
 $conProyecto=new mysqli('localhost', 'gestor', 'secreto', 'proyecto');
 if($conProyecto->connect_error){
@@ -10,7 +13,7 @@ $todoBien=true;
 $conProyecto->autocommit(false);
 $update="update stocks set unidades=1 where producto=(select id from productos
 where nombre_corto='3DSNG') AND tienda=1";
-if(!$conProyecto->query($update)){
+if(!$conProyecto->query($update) || $conProyecto->affected_rows == 0){
 $todoBien=false;
 }
 //fijate en este insert, el select devolverá el productos.id del producto de nombre_corto='3DSNG' 3 y 1 es decir
@@ -30,4 +33,3 @@ $conProyecto->rollback();
 echo "<p>No se han podido realizar los cambios.</p>";
 }
 $conProyecto->close();
-//No es necesario cerrar el script al ser un archivo php "puro"
