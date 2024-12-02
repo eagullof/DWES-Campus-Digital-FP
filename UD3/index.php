@@ -30,8 +30,8 @@
             <a class="btn btn-outline-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria16-UD3/resultados/">Resultados MySQLi</a>
             <a class="btn btn-outline-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria16-UD3/ejercicioResuelto2/">Ejercicio resuelto 2 MySQLi</a>
             <a class="btn btn-outline-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria17-UD3/consultasPreparadas/">Consultas preparadas MySQLi</a>
-            <a class="btn btn-outline-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria17-UD3/ejercicioResuelto3/">Ejercicio resuelto 3 MySQLi</a>
             <a class="btn btn-outline-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria17-UD3/inyecciones/">Inyecciones de código MySQLi</a>
+            <a class="btn btn-outline-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria18-UD3/ejercicioResuelto3/">Ejercicio resuelto 3 MySQLi</a>
             <a class="btn btn-outline-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria18-UD3/conexionPDO/">Conexión PDO</a>
             <a class="btn btn-outline-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria18-UD3/consultasPDO/">Consultas PDO</a>
         </div>
