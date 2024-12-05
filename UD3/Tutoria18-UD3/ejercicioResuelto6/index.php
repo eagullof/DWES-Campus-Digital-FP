@@ -1,28 +1,31 @@
 <?php
-// Conexión a la base de datos
+/**
+ * Crea una página web en la que se muestren las unidades existentes de un determinado producto en cada una de las tiendas. Para seleccionar el producto concreto utiliza un cuadro de selección dentro de un formulario en esa misma página. 
+ */
+// Establecemos la conexión con la base de datos utilizando PDO
 try {
-    $dsn = "mysql:host=localhost;dbname=proyecto;charset=utf8mb4";
-    $user = "gestor";
-    $pass = "secreto";
-    $conProyecto = new PDO($dsn, $user, $pass);
+    $conProyecto = new PDO('mysql:host=localhost;dbname=proyecto', 'gestor', 'secreto');
+    // Configuramos PDO para lanzar excepciones en caso de error
     $conProyecto->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    die("<p class='text-danger'>Error de conexión: " . $e->getMessage() . "</p>");
+    // Si hay un error de conexión, detenemos la ejecución con die() y mostramos el error
+    die('Error de Conexión: ' . $e->getMessage());
 }
 
-// Función para generar el botón "Consultar Otro Artículo"
-function pintarBoton()
-{
-    echo "<a href='{$_SERVER['PHP_SELF']}' class='btn btn-success mb-2'>Consultar Otro Artículo</a>";
+// Función para cerrar la conexión con la base de datos
+function cerrarConexion(&$conProyecto) {
+    $conProyecto = null; // Cerramos la conexión asignando null
 }
 ?>
+
 <!doctype html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Inclusión de Bootstrap para estilos -->
+    <!-- Incluimos el CSS de Bootstrap para estilos -->
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
@@ -33,88 +36,83 @@ function pintarBoton()
 <h3 class="text-center mt-2 font-weight-bold">Ejercicio Resuelto</h3>
 <div class="container mt-3">
     <?php
-    if (isset($_POST['enviar'])) { // Consultar unidades de un producto
-        $codProd = intval($_POST['producto']); // Aseguramos que sea un número entero
+    // Comprobamos si se ha enviado el formulario
+    if (isset($_POST['enviar'])) {
+        // Recuperamos el ID del producto seleccionado
+        $codProd = $_POST['producto'];
 
-        // Consultar el nombre del producto
-        $consulta1 = "SELECT nombre, nombre_corto FROM productos WHERE id = ?";
-        $stmt1 = $conProyecto->prepare($consulta1);
-        $stmt1->execute([$codProd]);
-        $producto = $stmt1->fetch(PDO::FETCH_ASSOC);
+        try {
+            // Consulta para obtener el nombre y el nombre corto del producto seleccionado
+            $consultaNombre = $conProyecto->prepare("SELECT nombre, nombre_corto FROM productos WHERE id = :id");
+            $consultaNombre->bindParam(':id', $codProd, PDO::PARAM_INT);
+            $consultaNombre->execute();
 
-        if (!$producto) {
-            die("<p class='text-danger'>Producto no encontrado.</p>");
+            // Consulta para obtener las unidades disponibles y los nombres de las tiendas relacionadas con el producto
+            $consultaEspecifica = $conProyecto->prepare("SELECT unidades, tiendas.nombre AS tienda 
+                               FROM stocks, tiendas 
+                               WHERE tienda = tiendas.id AND producto = :id");
+            $consultaEspecifica->bindParam(':id', $codProd, PDO::PARAM_INT);
+            $consultaEspecifica->execute();
+
+            // Recuperamos la información del producto (solo se espera una fila)
+            $fila = $consultaNombre->fetch(PDO::FETCH_ASSOC);
+            echo "<h4 class='mt-3 mb-3 text-center'>Unidades del Producto: ";
+            echo $fila['nombre'] . " ({$fila['nombre_corto']})";
+            echo "</h4>";
+
+            // Botón para consultar otro artículo
+            echo "<a href='{$_SERVER['PHP_SELF']}' class='btn btn-success mb-2'>Consultar Otro Artículo</a>";
+
+            // Iniciamos la tabla para mostrar los resultados
+            echo "<table class='table table-striped table-dark'>";
+            echo "<thead>";
+            echo "<tr class='text-center font-weight-bold'><th>Nombre Tienda</th><th>Stock</th></tr>";
+            echo "</thead>";
+            echo "<tbody>";
+
+            // Recorremos los resultados y mostramos las tiendas y las unidades disponibles
+            while ($filas = $consultaEspecifica->fetch(PDO::FETCH_ASSOC)) {
+                echo "<tr><td>{$filas['tienda']}</td><td class='text-center'>{$filas['unidades']}</td></tr>";
+            }
+            echo "</tbody>";
+            echo "</table>";
+
+        } catch (PDOException $e) {
+            // Mostramos un mensaje de error si ocurre algún problema con las consultas
+            die("Error al recuperar el stock o producto: " . $e->getMessage());
         }
 
-        // Consultar el stock del producto
-        $consulta2 = "SELECT unidades, tienda, producto, tiendas.nombre AS nombreTienda 
-                      FROM stocks 
-                      JOIN tiendas ON tienda = tiendas.id 
-                      WHERE producto = ?";
-        $stmt2 = $conProyecto->prepare($consulta2);
-        $stmt2->execute([$codProd]);
-
-        echo "<h4 class='mt-3 mb-3 text-center'>Unidades del Producto: {$producto['nombre']} ({$producto['nombre_corto']})</h4>";
-        pintarBoton();
-
-        echo "<table class='table table-striped table-dark'>";
-        echo "<thead>";
-        echo "<tr class='font-weight-bold'><th class='text-center'>Nombre Tienda</th><th>Unidades</th><th class='text-center'>Acciones</th></tr>";
-        echo "</thead>";
-        echo "<tbody>";
-
-        while ($fila = $stmt2->fetch(PDO::FETCH_ASSOC)) {
-            echo "<tr class='text-center'><td>{$fila['nombreTienda']}</td>";
-            echo "<td class='text-center m-auto'>";
-            echo "<form name='a' action='{$_SERVER['PHP_SELF']}' method='POST' class='form-inline'>";
-            echo "<input type='number' class='form-control' step='1' min='0' name='stock' value='{$fila['unidades']}'>";
-            echo "<input type='hidden' name='ct' value='{$fila['tienda']}'>";
-            echo "<input type='hidden' name='cp' value='{$fila['producto']}'>";
-            echo "</td><td>";
-            echo "<input type='submit' class='btn btn-warning ml-2' name='enviar1' value='Actualizar'>";
-            echo "</form>";
-            echo "</td></tr>";
-        }
-
-        echo "</tbody>";
-        echo "</table>";
-    } elseif (isset($_POST['enviar1'])) { // Actualizar el stock de un producto
-        $codTienda = intval($_POST['ct']);
-        $codProducto = intval($_POST['cp']);
-        $unidades = intval($_POST['stock']);
-
-        // Actualizar el stock
-        $update = "UPDATE stocks SET unidades = ? WHERE producto = ? AND tienda = ?";
-        $stmt = $conProyecto->prepare($update);
-
-        if ($stmt->execute([$unidades, $codProducto, $codTienda])) {
-            echo "<p class='font-weight-bold text-success mt-3'>Unidades Actualizadas Correctamente</p>";
-        } else {
-            echo "<p class='text-danger'>Error al actualizar las unidades.</p>";
-        }
-        pintarBoton();
-    } else { // Mostrar formulario inicial
+        cerrarConexion($conProyecto); // Cerramos la conexión a la base de datos
+    } else {
+        // Si no se ha enviado el formulario, mostramos el formulario para seleccionar un producto
         ?>
-        <form name="f1" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+        <form name="f1" action="#" method="POST">
             <div class="form-group">
                 <label for="p" class="font-weight-bold">Elige un producto</label>
                 <select class="form-control" id="p" name="producto">
                     <?php
-                    // Consultar productos disponibles
-                    $consulta = "SELECT id, nombre, nombre_corto FROM productos ORDER BY nombre";
-                    foreach ($conProyecto->query($consulta) as $fila) {
-                        echo "<option value='{$fila['id']}'>{$fila['nombre']}</option>";
+                    try {
+                        // Consulta para obtener todos los productos disponibles ordenados por nombre
+                        $consultaProductos = $conProyecto->query("SELECT id, nombre, nombre_corto FROM productos ORDER BY nombre");
+
+                        // Recorremos los productos y los mostramos como opciones en el select
+                        while ($fila = $consultaProductos->fetch(PDO::FETCH_ASSOC)) {
+                            echo "<option value='{$fila['id']}'>{$fila['nombre']}</option>";
+                        }
+                    } catch (PDOException $e) {
+                        die("Error al recuperar los productos: " . $e->getMessage());
                     }
+
+                    cerrarConexion($conProyecto); // Cerramos la conexión
                     ?>
                 </select>
             </div>
             <div class="mt-2">
+                <!-- Botón para enviar el formulario -->
                 <input type="submit" class="btn btn-info mr-3" value="Consultar Stock" name="enviar">
             </div>
         </form>
-        <?php
-    }
-    ?>
-</div>
+        </div>
+    <?php } ?>
 </body>
 </html>

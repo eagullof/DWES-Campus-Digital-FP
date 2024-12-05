@@ -39,7 +39,7 @@ try {
     $resultado->bindColumn(1, $producto);
     $resultado->bindColumn(2, $unidades);
     while ($resultado->fetch(PDO::FETCH_BOUND)) {
-        echo "Producto: " . $producto . " - Unidades: " . $unidades . "<br>";
+        echo "<br> Producto: " . $producto . " - Unidades: " . $unidades . "<br>";
     }
 
     echo "<hr>";
@@ -64,6 +64,7 @@ try {
     //Sí, si no utilizas fetchAll() al obtener datos con PDO, los resultados se van obteniendo secuencialmente uno por uno, en lugar de cargarse todos de golpe en memoria. Esto ocurre cuando usas métodos como fetch() o iteradores sobre el objeto PDOStatement.
     $resultado = $conProyecto->query("SELECT producto, unidades FROM stocks");
     $datos = $resultado->fetchAll(PDO::FETCH_ASSOC);
+    var_dump($datos);
     foreach ($datos as $fila) {
         echo $fila['producto'] . " " . $fila['unidades'] . "<br>";
     }

@@ -3,11 +3,11 @@
 //GESTION DE ERRORES
 error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 //$resultado = $dividendo / $divisor;
-error_reporting(E_ALL & ~E_NOTICE);
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
 
 set_error_handler("miGestorDeErrores");
 //$resultado = $dividendo / $divisor;
-restore_error_handler(); // Restaura el manejador original
+//restore_error_handler(); // Restaura el manejador original
 
 function miGestorDeErrores($nivel, $mensaje, $archivo, $linea)
 {

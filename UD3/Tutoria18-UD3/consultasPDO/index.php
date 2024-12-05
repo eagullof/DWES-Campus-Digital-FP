@@ -17,7 +17,7 @@ try {
     $conProyecto->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "<p>Conexión exitosa a la base de datos.</p>";
 
-    // NO DEVUELVE RESULTADOS: Ejecutar consulta de inserción
+    // NO DEVUELVE RESULTADOS (exec): Ejecutar consulta de inserción
     $registros = $conProyecto->exec('INSERT INTO stocks (producto, tienda, unidades) VALUES ("21", "3", "0"), ("1", "3", "0")');
     echo "<p>Se han añadido $registros registros.</p>";
 
@@ -28,6 +28,8 @@ try {
     // DEVUELVE RESULTADOS: Ejecutar consulta de selección
     $resultado = $conProyecto->query("SELECT producto, unidades FROM stocks");
     var_dump($resultado);
+
+    echo "<br>";
 
     // Verificar si se obtuvieron resultados
     if ($resultado) {
