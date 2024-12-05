@@ -34,6 +34,15 @@
             <a class="btn btn-outline-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria18-UD3/ejercicioResuelto3/">Ejercicio resuelto 3 MySQLi</a>
             <a class="btn btn-outline-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria18-UD3/conexionPDO/">Conexión PDO</a>
             <a class="btn btn-outline-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria18-UD3/consultasPDO/">Consultas PDO</a>
+            <a class="btn btn-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria18-UD3/transaccionesPDO/">Transacciones PDO</a>
+            <a class="btn btn-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria18-UD3/ejercicioResuelto4/">Ejercicio resuelto 4</a>
+            <a class="btn btn-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria18-UD3/resultadosPDO/">Resultados PDO</a>
+            <a class="btn btn-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria18-UD3/ejercicioResuelto5/">Ejercicio resuelto 5</a>
+            <a class="btn btn-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria18-UD3/consultasPreparadasPDO/">Consultas preparadas PDO</a>
+            <a class="btn btn-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria18-UD3/ejercicioResuelto6/">Ejercicio resuelto 6</a>
+            <a class="btn btn-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria18-UD3/Excepciones/">Excepciones</a>
+            <a class="btn btn-primary m-2" href="/DWES-Campus-Digital-FP/UD3/Tutoria18-UD3/ejercicioResuelto7/">Ejercicio resuelto 7</a>
+            <button class="btn btn-primary m-2" onclick="history.back();">Volver</button> 
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
