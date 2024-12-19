@@ -1,0 +1,5 @@
+AuthName "Contenido restringido"
+AuthType Basic
+AuthUserFile "C:/xampp/apache/passwd/users.pass"
+Require valid-user
+ErrorDocument 401 /401.html
