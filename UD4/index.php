@@ -14,6 +14,8 @@
         <h1 class="text-primary-emphasis text-center">Enlaces a los ejemplos de las tutorías. UD4</h1>
         <div class="d-flex flex-wrap justify-content-center">
             <a class="btn btn-outline-primary m-2" href="/DWES-Campus-Digital-FP/UD4/Tutoria19-UD4/">Tutoría 19</a>
+            <a class="btn btn-outline-primary m-2" href="/DWES-Campus-Digital-FP/UD4/Tutoria20-UD4/">Tutoría 20</a>
+            <a class="btn btn-outline-primary m-2" href="/DWES-Campus-Digital-FP/UD4/Tutoria21-UD4/">Tutoría 21</a>
         </div>
     </div>
 
