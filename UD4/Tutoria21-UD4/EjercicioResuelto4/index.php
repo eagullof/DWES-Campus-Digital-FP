@@ -1,7 +1,6 @@
 <?php
 // Iniciamos sesión para almacenar información del usuario
 session_start();
-
 // Si el usuario no está autenticado, solicitamos las credenciales
 if (!isset($_SERVER['PHP_AUTH_USER'])) {
     header("WWW-Authenticate: Basic realm='Contenido restringido'");
