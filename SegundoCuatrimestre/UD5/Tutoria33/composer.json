@@ -1,0 +1,22 @@
+{
+    "name": "campusdigitalfp/eagullof",
+    "description": "Este es mi primer proyecto con composer",
+    "type": "project",
+    "license": "GPL-3.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "Clases\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "eagullo",
+            "email": "eagullof@fpvirtualaragon.es"
+        }
+    ],
+    "require": {
+        "fakerphp/faker": "^1.24",
+        "picqer/php-barcode-generator": "^3.2",
+        "philo/laravel-blade": "^3.1"
+    }
+}
