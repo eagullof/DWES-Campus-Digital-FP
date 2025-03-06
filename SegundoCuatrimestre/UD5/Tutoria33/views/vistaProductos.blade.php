@@ -31,6 +31,9 @@
             @endforeach
         </tbody>
     </table>
+    <div class="text-center mt-3">
+        <a href="exportarProductos.php" class="btn btn-success">Exportar a Excel</a>
+    </div>
 @endsection
 
 @section('enlace')

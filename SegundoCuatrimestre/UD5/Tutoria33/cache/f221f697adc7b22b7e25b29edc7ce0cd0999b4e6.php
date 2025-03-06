@@ -15,6 +15,7 @@
                 <th>Código</th>
                 <th>Nombre</th>
                 <th>Código de barras</th>
+                <th>Código QR</th>
             </tr>
         </thead>
         <tbody>
@@ -22,7 +23,8 @@
                 <tr class="text-center">
                     <th><?php echo e($familia->cod); ?></th>
                     <td><?php echo e($familia->nombre); ?></td>
-                    <td><img src="data:image/png;base64,<?php echo e($barcodes["$familia->cod"]); ?>" alt="Código de barras"></td>
+                    <td><?php echo $barcodes[$familia->cod]; ?></td>
+                    <td><img src="data:image/png;base64,<?php echo e($qrCodes[$familia->cod]); ?>" alt="Código qr"></td>
                 </tr>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </tbody>

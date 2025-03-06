@@ -15,6 +15,7 @@
                 <th>Código</th>
                 <th>Nombre</th>
                 <th>Código de barras</th>
+                <th>Código QR</th>
             </tr>
         </thead>
         <tbody>
@@ -22,7 +23,8 @@
                 <tr class="text-center">
                     <th>{{ $familia->cod }}</th>
                     <td>{{ $familia->nombre }}</td>
-                    <td><img src="data:image/png;base64,{{ $barcodes["$familia->cod"] }}" alt="Código de barras"></td>
+                    <td>{!! $barcodes[$familia->cod] !!}</td>
+                    <td><img src="data:image/png;base64,{{ $qrCodes[$familia->cod] }}" alt="Código qr"></td>
                 </tr>
             @endforeach
         </tbody>

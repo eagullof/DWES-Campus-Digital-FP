@@ -13,6 +13,10 @@ class ComposerStaticInitf6b146a54160f06ed58652a06b6760e7
     );
 
     public static $prefixLengthsPsr4 = array (
+        'Z' => 
+        array (
+            'ZipStream\\' => 10,
+        ),
         'S' => 
         array (
             'Symfony\\Component\\Finder\\' => 25,
@@ -20,10 +24,18 @@ class ComposerStaticInitf6b146a54160f06ed58652a06b6760e7
         ),
         'P' => 
         array (
+            'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
+            'Psr\\Http\\Message\\' => 17,
+            'Psr\\Http\\Client\\' => 16,
             'Psr\\Container\\' => 14,
             'Picqer\\Barcode\\' => 15,
+            'PhpOffice\\PhpSpreadsheet\\' => 25,
             'Philo\\Blade\\' => 12,
+        ),
+        'M' => 
+        array (
+            'Matrix\\' => 7,
         ),
         'I' => 
         array (
@@ -38,18 +50,33 @@ class ComposerStaticInitf6b146a54160f06ed58652a06b6760e7
         array (
             'Faker\\' => 6,
         ),
+        'E' => 
+        array (
+            'Endroid\\QrCode\\' => 15,
+        ),
         'D' => 
         array (
             'Doctrine\\Inflector\\' => 19,
             'Doctrine\\Common\\Inflector\\' => 26,
+            'DASPRiD\\Enum\\' => 13,
         ),
         'C' => 
         array (
+            'Composer\\Pcre\\' => 14,
+            'Complex\\' => 8,
             'Clases\\' => 7,
+        ),
+        'B' => 
+        array (
+            'BaconQrCode\\' => 12,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'ZipStream\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/maennchen/zipstream-php/src',
+        ),
         'Symfony\\Component\\Finder\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/finder',
@@ -58,9 +85,22 @@ class ComposerStaticInitf6b146a54160f06ed58652a06b6760e7
         array (
             0 => __DIR__ . '/..' . '/symfony/debug',
         ),
+        'Psr\\SimpleCache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/simple-cache/src',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'Psr\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'Psr\\Http\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-client/src',
         ),
         'Psr\\Container\\' => 
         array (
@@ -70,9 +110,17 @@ class ComposerStaticInitf6b146a54160f06ed58652a06b6760e7
         array (
             0 => __DIR__ . '/..' . '/picqer/php-barcode-generator/src',
         ),
+        'PhpOffice\\PhpSpreadsheet\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpoffice/phpspreadsheet/src/PhpSpreadsheet',
+        ),
         'Philo\\Blade\\' => 
         array (
             0 => __DIR__ . '/..' . '/philo/laravel-blade/src',
+        ),
+        'Matrix\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/markbaker/matrix/classes/src',
         ),
         'Illuminate\\View\\' => 
         array (
@@ -102,6 +150,10 @@ class ComposerStaticInitf6b146a54160f06ed58652a06b6760e7
         array (
             0 => __DIR__ . '/..' . '/fakerphp/faker/src/Faker',
         ),
+        'Endroid\\QrCode\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/endroid/qr-code/src',
+        ),
         'Doctrine\\Inflector\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector',
@@ -110,9 +162,25 @@ class ComposerStaticInitf6b146a54160f06ed58652a06b6760e7
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
         ),
+        'DASPRiD\\Enum\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dasprid/enum/src',
+        ),
+        'Composer\\Pcre\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/pcre/src',
+        ),
+        'Complex\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/markbaker/complex/classes/src',
+        ),
         'Clases\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
+        ),
+        'BaconQrCode\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/bacon/bacon-qr-code/src',
         ),
     );
 

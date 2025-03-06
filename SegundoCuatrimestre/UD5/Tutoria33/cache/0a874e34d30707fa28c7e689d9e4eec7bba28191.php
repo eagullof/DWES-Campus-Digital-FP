@@ -32,6 +32,9 @@
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </tbody>
     </table>
+    <div class="text-center mt-3">
+        <a href="exportarProductos.php" class="btn btn-success">Exportar a Excel</a>
+    </div>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('enlace'); ?>
